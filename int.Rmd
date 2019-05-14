@@ -1,0 +1,338 @@
+---
+title: "Intermediate tut"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+speed <- 64
+
+# Code the while loop
+while (speed > 30) {
+  print("Slow down!")
+  speed <- speed - 7
+}
+speed
+
+#Segundo ciclo
+speed <- 64
+
+# Extend/adapt the while loop
+while (speed > 30) {
+  print(paste("Your speed is", speed))
+  if (speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed - 6
+  }
+}
+
+#Tercer ciclo
+
+speed <- 88
+
+while (speed > 30) {
+  print(paste("Your speed is", speed))
+  
+  # Break the while loop when speed exceeds 80
+  if (speed > 80) {
+    break
+  }
+  
+  if (speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed - 6
+  }
+}
+
+#Cuaro ciclo
+
+i <- 1
+
+# Code the while loop
+while (i <= 10) {
+  print(3 * i)
+  if ( (3 * i) %% 8 == 0) {
+    break
+  }
+  i <- i + 1
+}
+
+
+#Quinto ciclo
+
+primes <- c(2, 3, 5, 7, 11, 13)
+
+# loop version 1
+for (p in primes) {
+  print(p)
+}
+
+# loop version 2
+for (i in 1:length(primes)) {
+  print(primes[i])
+}
+
+#Sexto ciclo
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Loop version 1
+for (li in linkedin) {
+  print(li)
+}
+
+#Septimo ciclo
+
+for (i in 1:length(linkedin)) {
+  print(linkedin[i])
+}
+
+#Octavo ciclo
+primes_list <- list (2, 3, 5, 7, 11, 13)
+for (p in primes_list) {
+  print(p)
+}
+
+# loop version 2
+for (i in 1:length(primes_list)) {
+  print(primes_list[[i]])
+}
+
+#Noveno ciclo
+
+nyc <- list(pop = 8405837, 
+            boroughs = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"), 
+            capital = FALSE)
+
+# Loop version 1
+for (info in nyc) {
+  print(info)
+}
+
+#Decimo ciclo
+
+for (i in 1:length(nyc)) {
+  print(nyc[[i]])
+}
+
+#11 ciclo
+
+d1 <- c("O",  "NA",   "X")
+d2 <- c("NA", "O",  "O" )
+d3 <- c("X",  "NA",  "X")
+
+ttt_data <- c(d1, d2, d3)
+ttt_data
+ttt <- matrix(ttt_data, byrow = TRUE, nrow = 3)
+ttt
+#12 ciclo
+for (i in 1:nrow(ttt)) {
+  for (j in 1:ncol(ttt)) {
+    print(paste("On row", i, "and column", j, "the board contains", ttt[i,j]))
+  }
+}
+
+#13 ciclo
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Code the for loop with conditionals
+for (li in linkedin) {
+  if (li > 10) {
+    print("You're popular!")
+  } else {
+    print("Be more visible!")
+  }
+  print(li)
+}
+
+#14 ciclo
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Adapt/extend the for loop
+for (li in linkedin) {
+  if (li > 10) {
+    print("You're popular!")
+  } else {
+    print("Be more visible!")
+  }
+  
+  # Add if statement with break
+  if (li > 16) {
+    print("This is ridiculous, I'm outta here!")
+    break
+  }
+  
+  # Add if statement with next
+  if (li < 5) {
+    print("This is too embarrassing!")
+    next
+  }
+  
+  print(li)
+}
+
+#15 ciclo
+
+rquote <- "r's internals are irrefutably intriguing"
+rquote
+chars <- strsplit(rquote, split = "")[[1]]
+chars
+
+rcount <- 0
+
+# Finish the for loop
+for (char in chars) {
+  if (char == "r") {
+    rcount <- rcount + 1
+  }
+  if (char == "u") {
+    break
+  }
+}
+
+# Print out rcount
+rcount
+
+#16 ciclo
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# Calculate average number of views
+avg_li <- mean(x = linkedin)
+avg_fb <- mean(facebook)
+
+# Inspect avg_li and avg_fb
+avg_li
+## [1] 10.85714
+avg_fb
+
+#17 ciclo
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# Calculate the mean of the sum
+avg_sum <- mean(linkedin + facebook)
+
+# Calculate the trimmed mean of the sum
+avg_sum_trimmed <- mean(linkedin + facebook, trim = 0.2)
+
+# Inspect both new variables
+avg_sum
+
+#18 ciclo
+
+linkedin <- c(16, 9, 13, 5, NA, 17, 14)
+facebook <- c(17, NA, 5, 16, 8, 13, 14)
+
+# Basic average of linkedin
+mean(linkedin)
+mean(linkedin, na.rm = TRUE)
+
+
+linkedin <- c(16, 9, 13, 5, NA, 17, 14)
+facebook <- c(17, NA, 5, 16, 8, 13, 14)
+
+# Calculate the mean absolute deviation
+mean(abs(linkedin - facebook), na.rm = TRUE)
+
+my_fun <- function(arg1, arg2) {
+  body
+}
+
+pow_two <- function(x) {
+  x ^ 2
+}
+
+# Use the function
+pow_two(12)
+
+sum_abs <- function(x, y) {
+  abs(x) + abs(y)
+}
+
+# Use the function
+sum_abs(-2, 3)
+
+hello <- function() {
+  print("Hi there!")
+  TRUE
+}
+
+# Call the function hello()
+hello()
+
+pow_two <- function(x, print_info = TRUE) {
+  y <- x ^ 2
+  if (print_info) {
+    print(paste(x, "to the power two equals", y))
+  }
+  return(y)
+}
+
+# Some calls of the pow_two() function
+pow_two(5)
+
+linkedin <- c(16, 9, 13,  5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16,  8, 13, 14)
+
+# Define the interpret function
+interpret <- function(num_views) {
+  if (num_views > 15) {
+    print("You're popular!")
+    return(num_views)
+  } else {
+    print("Try to be more visible!")
+    return(0)
+  }
+}
+
+# Call the interpret function twice
+interpret(linkedin[1])
+
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# The interpret() can be used inside interpret_all()
+interpret <- function(num_views) {
+  if (num_views > 15) {
+    print("You're popular!")
+    return(num_views)
+  } else {
+    print("Try to be more visible!")
+    return(0)
+  }
+}
+
+# Define the interpret_all() function
+# views: vector with data to interpret
+# return_sum: return total number of views on popular days?
+interpret_all <- function(views, return_sum = TRUE) {
+  count <- 0
+
+  for (v in views) {
+    count <- count + interpret(v)
+  }
+
+  if (return_sum) {
+    return(count)
+  } else {
+    return(NULL)
+  }
+}
+
+# Call the interpret_all() function on both linkedin and facebook
+interpret_all(linkedin)
+
+
+```
+
