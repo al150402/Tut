@@ -1,0 +1,310 @@
+---
+title: "First Tutorial"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+28 %% 6
+
+5+2
+30%%4
+
+my_var<-4
+
+x <- 42
+print(x)
+
+my_apples<-5
+
+my_apples
+
+my_oranges<-6
+my_oranges
+
+my_apples+my_oranges
+my_fruit<-my_apples+my_oranges
+
+my_fruit
+
+
+my_numeric<-42
+my_character<-"universe"
+my_logical<-FALSE
+
+class(my_numeric)
+class(my_character)
+class(my_logical)
+
+vegas<-"Go!"
+
+numeric_vector<-c(1,2,3)
+character_vector<-c("a","b","c")
+boolean_vector<-c(TRUE,FALSE,TRUE)
+
+poker_vector<-c(140,-50,20,-120,240)
+roulette_vector<-c(-24,-50,100,-350,10)
+names(poker_vector)<-c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette_vector)<-c("Monday","Tuesday","Wednesday","Thursday","Friday")
+
+days_vector<-c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(poker_vector)<-days_vector
+names(roulette_vector)<-days_vector
+
+A_vector<-c(1,2,3)
+B_vector<-c(4,5,6)
+total_vector<-A_vector+B_vector
+total_vector
+
+total_dayly<-poker_vector+roulette_vector
+total_dayly
+
+total_poker<-sum(poker_vector)
+total_poker
+
+total_roulette<-sum(roulette_vector)
+total_roulette
+
+total_week<-total_roulette+total_poker
+total_week
+
+total_poker>total_roulette
+
+poker_wednesday<-poker_vector[3]
+poker_wednesday
+
+poker_midweek<-poker_vector[c(2,3,4)]
+poker_midweek
+
+roulette_selection_vector<-roulette_vector[2:5]
+roulette_selection_vector
+
+poker_start<-poker_vector[c("Monday","Tuesday","Wednesday")]
+poker_start
+
+
+selection_vector<-poker_vector>0
+selection_vector
+
+poker_winning_days<-poker_vector[selection_vector]
+poker_winning_days
+
+selection_vector<-roulette_vector>0
+selection_vector
+
+roulette_winning_days<-roulette_vector[selection_vector]
+roulette_winning_days
+
+matrix(1:9, byrow=TRUE,nrow=3)
+
+new_hope<-c(460.998,314.4)
+empire_strikes<-c(290.475,247.900)
+return_jedi<-c(309.306,165.8)
+
+box_office<-c(new_hope,empire_strikes,return_jedi)
+box_office
+
+box_office <- c(new_hope, empire_strikes, return_jedi)
+box_office
+
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# Create box_office
+box_office <- c(new_hope, empire_strikes, return_jedi)
+box_office
+
+stars_wars_matrix<-matrix(c(new_hope,empire_strikes,return_jedi), nrow = 3, byrow = TRUE)
+stars_wars_matrix
+
+region<-c("US", "non-US")
+titles<-c("A New Hope","The Empire Strikes Back", "Return of the Jedi")
+
+colnames(stars_wars_matrix)<-region
+
+rownames(stars_wars_matrix)<-titles
+
+stars_wars_matrix
+
+worldwide_vector<-rowSums(stars_wars_matrix)
+worldwide_vector
+
+all_wars_matrix<-cbind(stars_wars_matrix,worldwide_vector)
+all_wars_matrix
+#Primera matriz
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+
+#Segunda matriz de star wars
+box_office2<-c(474.5,552.5,310.7,338.7,380.3,468.5)
+stars_wars_matrix2<-matrix(box_office2,nrow = 3, byrow = TRUE)
+dimnames = list(c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith"), c("US", "non-US"))
+#Crear matriz
+all_wars_matrix<-rbind(stars_wars_matrix,stars_wars_matrix2)
+all_wars_matrix
+
+
+
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# Construct star_wars_matrix2
+box_office2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
+star_wars_matrix2 <- matrix(box_office2, nrow = 3, byrow = TRUE,
+                            dimnames = list(c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith"), 
+                                            c("US", "non-US")))
+
+
+# Combine both Star Wars trilogies in one matrix
+all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+all_wars_matrix
+
+total_revenue_vector<-colSums(all_wars_matrix)
+
+total_revenue_vector
+
+US<-all_wars_matrix[,1]
+US
+
+mean(US)
+
+US<-all_wars_matrix[1:2,1]
+US
+
+mean(US)
+
+visitors<-all_wars_matrix/5
+visitors
+#Tickets
+ticket_office<-c(5,6,7,4,4.5,4.9)
+ticket_prices1<-matrix(ticket_office,nrow = 3, byrow = TRUE, dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), c("US","non-US")))
+
+#Tickets2
+ticket_office2<-c(5,6,7,4,4.5,4.9)
+ticket_prices2<-matrix(ticket_office2, nrow = 3, byrow = TRUE, dimnames = list(c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith"),c("US","non-US")))
+
+ticket_prices_matrix<-rbind(ticket_prices1, ticket_prices2)
+ticket_prices_matrix
+
+visitors<-all_wars_matrix/ticket_prices_matrix
+
+us_visitors<-visitors[,1]
+us_visitors
+
+mean(us_visitors)
+
+
+#Factores
+
+sex_vector<-c("Male","Female","Female","Male","Male")
+sex_vector
+
+factor_sex_vector<-factor(sex_vector)
+
+factor_sex_vector
+
+animals_vector<-c("Elephant","Giraffe","Donkey","Horse")
+animals_vector
+
+class(animals_vector)
+
+factor_animals_vector<-factor(animals_vector)
+factor_animals_vector
+
+temperature_vector<-c("High","Low","High","Low","Medium")
+temperature_vector
+
+speed_vector<-c("medium","slow","slow","medium","fast")
+speed_vector
+
+factor_speed_vector<-factor(speed_vector, ordered = TRUE, levels=c("slow","medium","fast"))
+factor_speed_vector
+
+
+summary(factor_speed_vector)
+
+da2<-factor_speed_vector[2]
+da2
+
+da5<-factor_speed_vector[5]
+da5
+
+da2>da5
+
+mtcars
+
+class(mtcars)
+
+head(mtcars)
+?mtcars
+
+str(mtcars)
+
+name<-c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune")
+name
+
+type<-c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+type
+
+diameter<-c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883)
+diameter
+
+rotation<-c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67)
+rotation
+
+rings<-c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE)
+rings
+
+planets_df<-data.frame(name,type,diameter,rotation,rings)
+planets_df
+
+class(planets_df)
+str(planets_df)
+
+planets_df[1,3]
+planets_df[4,]
+
+rings_vector<-planets_df$rings
+rings_vector
+
+planets_df[rings_vector,]
+
+subset(planets_df,subset = diameter<1)
+?order()
+
+position<-order(planets_df$diameter)
+position
+
+planets_df[position,]
+
+my_list<-list(position,roulette_vector,poker_vector)
+my_list
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
